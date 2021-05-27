@@ -1,10 +1,11 @@
 <template>
     <div>
-        <h1>LIST PAGE</h1>
+        <h1>USER LIST</h1>
         <ul>
-            <li v-for="(item, idx) in items" :key="idx">
+            <li v-for="(item, idx) in items" :key="idx" :item="item">
                 <router-link to="/user/">
-                    USER
+                    <!-- <Feed /> -->
+                    USER {{ idx + 1 }}
                 </router-link>
             </li>
         </ul>
@@ -13,9 +14,13 @@
 
 <script>
 import axios from 'axios'
+// import Feed from '@/components/Feed.vue'
 
 export default {
     name: "FeedList",
+    // components: {
+    //     Feed
+    // },
     props: {
         msg: String
     },

@@ -1,14 +1,16 @@
 <template>
   <div id="app">
-    <router-view/>
+    <FeedList/>
   </div>
 </template>
 
 <script>
+import FeedList from './components/FeedList.vue'
+
 export default {
   name: 'App',
   components: {
-    
+    FeedList
   }
 }
 </script>
