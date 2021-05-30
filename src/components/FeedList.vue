@@ -2,25 +2,20 @@
     <div>
         <h1>USER LIST</h1>
         <ul>
-            <li v-for="(item, idx) in items" :key="idx" :item="item">
-                <router-link to="/user/">
-                    <!-- <Feed /> -->
-                    USER {{ idx + 1 }}
-                </router-link>
-            </li>
+            <Feed v-for="(item, idx) in items" :key="idx" :item="item"/> 
         </ul>
     </div>
 </template>
 
 <script>
 import axios from 'axios'
-// import Feed from '@/components/Feed.vue'
+import Feed from '@/components/Feed.vue'
 
 export default {
     name: "FeedList",
-    // components: {
-    //     Feed
-    // },
+    components: {
+        Feed
+    },
     props: {
         msg: String
     },

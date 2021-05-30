@@ -1,5 +1,10 @@
 <template>
-    <div></div>
+    <li>
+        {{ item.firstName }}
+        <router-link to="/user/">
+            More View
+        </router-link>
+    </li>
 </template>
 
 <script>
