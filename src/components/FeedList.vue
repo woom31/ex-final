@@ -1,6 +1,5 @@
 <template>
-    <div>
-        <h1>USER LIST</h1>
+    <div class="feedList">
         <Feed v-for="(item, idx) in items" :key="idx" :item="item" />
     </div>
 </template>
@@ -19,8 +18,8 @@ export default {
     },
     data(){
         return {
-            items: [],
-            users: []
+            items: []
+            // users: []
         }
     },
     mounted(){
@@ -33,19 +32,23 @@ export default {
 
             console.log( this.items );
         })
-        axios.get('https://dummyapi.io/data/api/user?limit=10', {
-            'headers' : {
-                "app-id" : '609d61a3cfa64e21a68b8e5c'
-            }
-        }).then(response => {
-            this.users = response.data.data;
+        // axios.get('https://dummyapi.io/data/api/user?limit=10', {
+        //     'headers' : {
+        //         "app-id" : '609d61a3cfa64e21a68b8e5c'
+        //     }
+        // }).then(response => {
+        //     this.users = response.data.data;
 
-            console.log( this.users );
-        })
+        //     console.log( this.users );
+        // })
     }
 }
 </script>
 
 <style scoped>
-
+.feedList {
+    display: block;
+    width: 600px;
+    margin: 40px 30px 80px 310px;
+}
 </style>
