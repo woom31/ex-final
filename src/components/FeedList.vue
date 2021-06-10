@@ -1,9 +1,7 @@
 <template>
     <div>
         <h1>USER LIST</h1>
-        <ul>
-            <Feed v-for="(item, idx) in items" :key="idx" :item="item"/> 
-        </ul>
+        <Feed v-for="(item, idx) in items" :key="idx" :item="item" />
     </div>
 </template>
 
@@ -21,17 +19,28 @@ export default {
     },
     data(){
         return {
-            items: []
+            items: [],
+            users: []
         }
     },
     mounted(){
+        axios.get('https://dummyapi.io/data/api/post?limit=10', {
+            'headers' : {
+                "app-id" : '609d61a3cfa64e21a68b8e5c'
+            }
+        }).then(res => {
+            this.items = res.data.data;
+
+            console.log( this.items );
+        })
         axios.get('https://dummyapi.io/data/api/user?limit=10', {
             'headers' : {
                 "app-id" : '609d61a3cfa64e21a68b8e5c'
             }
-        }).then((res) => {
-            this.items = res.data.data;
-            console.log( this.items );
+        }).then(response => {
+            this.users = response.data.data;
+
+            console.log( this.users );
         })
     }
 }

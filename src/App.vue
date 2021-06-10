@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <FeedList/>
+      
+      <FeedList/>
   </div>
 </template>
 

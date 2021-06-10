@@ -15,7 +15,7 @@ export default new Router({
             component: FeedList
         },
         {
-            path: "/detail/:id",
+            path: "/post/${item.id}",
             name: "FeedDetail",
             component: FeedDetail,
             props: true
